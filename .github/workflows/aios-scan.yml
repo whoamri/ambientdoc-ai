@@ -1,0 +1,11 @@
+on:
+  push:
+    paths:
+      - 'models/**'
+      - 'prompts/**'
+
+jobs:
+  portfolio-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - run: claude -p scans/ambientdoc_scan.md >> gaps.md
